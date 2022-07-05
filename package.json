@@ -1,0 +1,44 @@
+{
+    "name": "@forestvpn/forestvpn_cloud_api",
+    "version": "0.1.0",
+    "description": "A package to interact ForestVPN Cloud API (manage vpn profiles, check usage statistics, and many other)",
+    "author": "ForestVPN",
+    "keywords": [
+        "wireguard",
+        "api",
+        "rest",
+        "wgrest",
+        "restful",
+        "vpn",
+        "tunneling",
+        "wg",
+        "forestvpn",
+        "wireguard-ui",
+        "vpn-ui",
+        "vpn-rest",
+        "vpn-api",
+        "cloud"
+    ],
+    "license": "MIT",
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts",
+    "scripts": {
+        "build": "tsc --outDir dist/",
+        "prepublishOnly": "npm run build"
+    },
+    "dependencies": {
+        "axios": "^0.21.1"
+    },
+    "devDependencies": {
+        "@types/node": "^12.11.5",
+        "typescript": "^3.6.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/forestvpn/cloud-api-client-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/forestvpn/cloud-api-client-js/issues"
+    },
+    "homepage": "https://forestvpn.com/"
+}
