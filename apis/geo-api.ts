@@ -26,10 +26,15 @@ export const GeoApiAxiosParamCreator = function (configuration?: Configuration) 
         /**
          * 
          * @summary Location list
+         * @param {string} projectId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listLocations: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listLocations: async (projectId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling listLocations.');
+            }
             const localVarPath = `/locations/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
@@ -50,6 +55,10 @@ export const GeoApiAxiosParamCreator = function (configuration?: Configuration) 
             }
 
             // authentication BearerTokenAuth required
+
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
 
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
@@ -79,11 +88,12 @@ export const GeoApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Location list
+         * @param {string} projectId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listLocations(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<Location>>>> {
-            const localVarAxiosArgs = await GeoApiAxiosParamCreator(configuration).listLocations(options);
+        async listLocations(projectId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<Location>>>> {
+            const localVarAxiosArgs = await GeoApiAxiosParamCreator(configuration).listLocations(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -101,11 +111,12 @@ export const GeoApiFactory = function (configuration?: Configuration, basePath?:
         /**
          * 
          * @summary Location list
+         * @param {string} projectId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listLocations(options?: AxiosRequestConfig): Promise<AxiosResponse<Array<Location>>> {
-            return GeoApiFp(configuration).listLocations(options).then((request) => request(axios, basePath));
+        async listLocations(projectId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<Location>>> {
+            return GeoApiFp(configuration).listLocations(projectId, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -120,11 +131,12 @@ export class GeoApi extends BaseAPI {
     /**
      * 
      * @summary Location list
+     * @param {string} projectId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GeoApi
      */
-    public async listLocations(options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<Location>>> {
-        return GeoApiFp(this.configuration).listLocations(options).then((request) => request(this.axios, this.basePath));
+    public async listLocations(projectId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<Location>>> {
+        return GeoApiFp(this.configuration).listLocations(projectId, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -30,11 +30,16 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Create profile
+         * @param {string} projectId 
          * @param {CreateOrUpdateProfileRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createProfile: async (body?: CreateOrUpdateProfileRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createProfile: async (projectId: string, body?: CreateOrUpdateProfileRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling createProfile.');
+            }
             const localVarPath = `/profiles/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
@@ -55,6 +60,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
             }
 
             // authentication BearerTokenAuth required
+
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
@@ -79,12 +88,17 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Create profile data usage limit
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createProfileDataUsageLimit: async (profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        createProfileDataUsageLimit: async (projectId: string, profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling createProfileDataUsageLimit.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling createProfileDataUsageLimit.');
@@ -111,6 +125,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -134,11 +152,16 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Deletes profile and all associated resources
          * @summary Delete profile
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteProfile: async (profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteProfile: async (projectId: string, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling deleteProfile.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling deleteProfile.');
@@ -165,6 +188,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -184,12 +211,17 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Delete profile data usage limit
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteProfileDataUsageLimit: async (profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        deleteProfileDataUsageLimit: async (projectId: string, profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling deleteProfileDataUsageLimit.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling deleteProfileDataUsageLimit.');
@@ -221,6 +253,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -240,11 +276,16 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Profile details
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProfile: async (profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getProfile: async (projectId: string, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling getProfile.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling getProfile.');
@@ -271,6 +312,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -290,12 +335,17 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Profile data usage limit details
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProfileDataUsageLimit: async (profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getProfileDataUsageLimit: async (projectId: string, profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling getProfileDataUsageLimit.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling getProfileDataUsageLimit.');
@@ -327,6 +377,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -346,11 +400,16 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Profile data usage limits list
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listProfileDataUsageLimits: async (profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listProfileDataUsageLimits: async (projectId: string, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling listProfileDataUsageLimits.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling listProfileDataUsageLimits.');
@@ -377,6 +436,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -396,6 +459,7 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Profile stats list
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} [aggregate_by] 
          * @param {string} [date_after] 
@@ -405,7 +469,11 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listProfileStats: async (profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listProfileStats: async (projectId: string, profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling listProfileStats.');
+            }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
                 throw new RequiredError('profileId','Required parameter profileId was null or undefined when calling listProfileStats.');
@@ -456,6 +524,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['page'] = page;
             }
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -475,13 +547,18 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Profile list
+         * @param {string} projectId 
          * @param {string} [external_key] 
          * @param {number} [per_page] 
          * @param {number} [page] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listProfiles: async (external_key?: string, per_page?: number, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listProfiles: async (projectId: string, external_key?: string, per_page?: number, page?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling listProfiles.');
+            }
             const localVarPath = `/profiles/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
@@ -515,6 +592,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['page'] = page;
             }
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             const query = new URLSearchParams(localVarUrlObj.search);
             for (const key in localVarQueryParameter) {
                 query.set(key, localVarQueryParameter[key]);
@@ -535,14 +616,19 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Partial update profile details
          * @param {CreateOrUpdateProfileRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partialUpdateProfile: async (body: CreateOrUpdateProfileRequest, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        partialUpdateProfile: async (body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling partialUpdateProfile.');
+            }
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling partialUpdateProfile.');
             }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
@@ -570,6 +656,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -594,15 +684,20 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Partial update profile data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partialUpdateProfileDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        partialUpdateProfileDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling partialUpdateProfileDataUsageLimit.');
+            }
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling partialUpdateProfileDataUsageLimit.');
             }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
@@ -635,6 +730,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -659,14 +758,19 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Update profile details
          * @param {CreateOrUpdateProfileRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateProfile: async (body: CreateOrUpdateProfileRequest, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateProfile: async (body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling updateProfile.');
+            }
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling updateProfile.');
             }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
@@ -694,6 +798,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
 
             // authentication BearerTokenAuth required
 
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -718,15 +826,20 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Update profile data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateProfileDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateProfileDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling updateProfileDataUsageLimit.');
+            }
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling updateProfileDataUsageLimit.');
             }
             // verify required parameter 'profileId' is not null or undefined
             if (profileId === null || profileId === undefined) {
@@ -758,6 +871,10 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
             }
 
             // authentication BearerTokenAuth required
+
+            if (projectId !== undefined && projectId !== null) {
+                localVarHeaderParameter['projectId'] = String(projectId);
+            }
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
@@ -791,12 +908,13 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create profile
+         * @param {string} projectId 
          * @param {CreateOrUpdateProfileRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createProfile(body?: CreateOrUpdateProfileRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).createProfile(body, options);
+        async createProfile(projectId: string, body?: CreateOrUpdateProfileRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).createProfile(projectId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -805,13 +923,14 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create profile data usage limit
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createProfileDataUsageLimit(profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).createProfileDataUsageLimit(profileId, body, options);
+        async createProfileDataUsageLimit(projectId: string, profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).createProfileDataUsageLimit(projectId, profileId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -820,12 +939,13 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * Deletes profile and all associated resources
          * @summary Delete profile
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteProfile(profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).deleteProfile(profileId, options);
+        async deleteProfile(projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).deleteProfile(projectId, profileId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -834,13 +954,14 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Delete profile data usage limit
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteProfileDataUsageLimit(profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).deleteProfileDataUsageLimit(profileId, limitId, options);
+        async deleteProfileDataUsageLimit(projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).deleteProfileDataUsageLimit(projectId, profileId, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -849,12 +970,13 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Profile details
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProfile(profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).getProfile(profileId, options);
+        async getProfile(projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).getProfile(projectId, profileId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -863,13 +985,14 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Profile data usage limit details
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProfileDataUsageLimit(profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).getProfileDataUsageLimit(profileId, limitId, options);
+        async getProfileDataUsageLimit(projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).getProfileDataUsageLimit(projectId, profileId, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -878,12 +1001,13 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Profile data usage limits list
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listProfileDataUsageLimits(profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<DataUsageLimit>>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).listProfileDataUsageLimits(profileId, options);
+        async listProfileDataUsageLimits(projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<DataUsageLimit>>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).listProfileDataUsageLimits(projectId, profileId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -892,6 +1016,7 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Profile stats list
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} [aggregate_by] 
          * @param {string} [date_after] 
@@ -901,8 +1026,8 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listProfileStats(profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<ProfileStats>>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).listProfileStats(profileId, aggregate_by, date_after, date_before, per_page, page, options);
+        async listProfileStats(projectId: string, profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<ProfileStats>>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).listProfileStats(projectId, profileId, aggregate_by, date_after, date_before, per_page, page, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -911,14 +1036,15 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Profile list
+         * @param {string} projectId 
          * @param {string} [external_key] 
          * @param {number} [per_page] 
          * @param {number} [page] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listProfiles(external_key?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<Profile>>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).listProfiles(external_key, per_page, page, options);
+        async listProfiles(projectId: string, external_key?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<Profile>>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).listProfiles(projectId, external_key, per_page, page, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -928,12 +1054,13 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Partial update profile details
          * @param {CreateOrUpdateProfileRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partialUpdateProfile(body: CreateOrUpdateProfileRequest, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).partialUpdateProfile(body, profileId, options);
+        async partialUpdateProfile(body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).partialUpdateProfile(body, projectId, profileId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -943,13 +1070,14 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Partial update profile data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partialUpdateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).partialUpdateProfileDataUsageLimit(body, profileId, limitId, options);
+        async partialUpdateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).partialUpdateProfileDataUsageLimit(body, projectId, profileId, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -959,12 +1087,13 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update profile details
          * @param {CreateOrUpdateProfileRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateProfile(body: CreateOrUpdateProfileRequest, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).updateProfile(body, profileId, options);
+        async updateProfile(body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Profile>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).updateProfile(body, projectId, profileId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -974,13 +1103,14 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update profile data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).updateProfileDataUsageLimit(body, profileId, limitId, options);
+        async updateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await ProfilesApiAxiosParamCreator(configuration).updateProfileDataUsageLimit(body, projectId, profileId, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -998,79 +1128,87 @@ export const ProfilesApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Create profile
+         * @param {string} projectId 
          * @param {CreateOrUpdateProfileRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createProfile(body?: CreateOrUpdateProfileRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
-            return ProfilesApiFp(configuration).createProfile(body, options).then((request) => request(axios, basePath));
+        async createProfile(projectId: string, body?: CreateOrUpdateProfileRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
+            return ProfilesApiFp(configuration).createProfile(projectId, body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Create profile data usage limit
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createProfileDataUsageLimit(profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return ProfilesApiFp(configuration).createProfileDataUsageLimit(profileId, body, options).then((request) => request(axios, basePath));
+        async createProfileDataUsageLimit(projectId: string, profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return ProfilesApiFp(configuration).createProfileDataUsageLimit(projectId, profileId, body, options).then((request) => request(axios, basePath));
         },
         /**
          * Deletes profile and all associated resources
          * @summary Delete profile
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteProfile(profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
-            return ProfilesApiFp(configuration).deleteProfile(profileId, options).then((request) => request(axios, basePath));
+        async deleteProfile(projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
+            return ProfilesApiFp(configuration).deleteProfile(projectId, profileId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete profile data usage limit
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteProfileDataUsageLimit(profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
-            return ProfilesApiFp(configuration).deleteProfileDataUsageLimit(profileId, limitId, options).then((request) => request(axios, basePath));
+        async deleteProfileDataUsageLimit(projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
+            return ProfilesApiFp(configuration).deleteProfileDataUsageLimit(projectId, profileId, limitId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Profile details
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProfile(profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
-            return ProfilesApiFp(configuration).getProfile(profileId, options).then((request) => request(axios, basePath));
+        async getProfile(projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
+            return ProfilesApiFp(configuration).getProfile(projectId, profileId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Profile data usage limit details
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProfileDataUsageLimit(profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return ProfilesApiFp(configuration).getProfileDataUsageLimit(profileId, limitId, options).then((request) => request(axios, basePath));
+        async getProfileDataUsageLimit(projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return ProfilesApiFp(configuration).getProfileDataUsageLimit(projectId, profileId, limitId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Profile data usage limits list
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listProfileDataUsageLimits(profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<DataUsageLimit>>> {
-            return ProfilesApiFp(configuration).listProfileDataUsageLimits(profileId, options).then((request) => request(axios, basePath));
+        async listProfileDataUsageLimits(projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<DataUsageLimit>>> {
+            return ProfilesApiFp(configuration).listProfileDataUsageLimits(projectId, profileId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Profile stats list
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} [aggregate_by] 
          * @param {string} [date_after] 
@@ -1080,66 +1218,71 @@ export const ProfilesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listProfileStats(profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<ProfileStats>>> {
-            return ProfilesApiFp(configuration).listProfileStats(profileId, aggregate_by, date_after, date_before, per_page, page, options).then((request) => request(axios, basePath));
+        async listProfileStats(projectId: string, profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<ProfileStats>>> {
+            return ProfilesApiFp(configuration).listProfileStats(projectId, profileId, aggregate_by, date_after, date_before, per_page, page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Profile list
+         * @param {string} projectId 
          * @param {string} [external_key] 
          * @param {number} [per_page] 
          * @param {number} [page] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listProfiles(external_key?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<Profile>>> {
-            return ProfilesApiFp(configuration).listProfiles(external_key, per_page, page, options).then((request) => request(axios, basePath));
+        async listProfiles(projectId: string, external_key?: string, per_page?: number, page?: number, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<Profile>>> {
+            return ProfilesApiFp(configuration).listProfiles(projectId, external_key, per_page, page, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Partial update profile details
          * @param {CreateOrUpdateProfileRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partialUpdateProfile(body: CreateOrUpdateProfileRequest, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
-            return ProfilesApiFp(configuration).partialUpdateProfile(body, profileId, options).then((request) => request(axios, basePath));
+        async partialUpdateProfile(body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
+            return ProfilesApiFp(configuration).partialUpdateProfile(body, projectId, profileId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Partial update profile data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partialUpdateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return ProfilesApiFp(configuration).partialUpdateProfileDataUsageLimit(body, profileId, limitId, options).then((request) => request(axios, basePath));
+        async partialUpdateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return ProfilesApiFp(configuration).partialUpdateProfileDataUsageLimit(body, projectId, profileId, limitId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update profile details
          * @param {CreateOrUpdateProfileRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateProfile(body: CreateOrUpdateProfileRequest, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
-            return ProfilesApiFp(configuration).updateProfile(body, profileId, options).then((request) => request(axios, basePath));
+        async updateProfile(body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Profile>> {
+            return ProfilesApiFp(configuration).updateProfile(body, projectId, profileId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update profile data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
+         * @param {string} projectId 
          * @param {string} profileId 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return ProfilesApiFp(configuration).updateProfileDataUsageLimit(body, profileId, limitId, options).then((request) => request(axios, basePath));
+        async updateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return ProfilesApiFp(configuration).updateProfileDataUsageLimit(body, projectId, profileId, limitId, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1154,86 +1297,94 @@ export class ProfilesApi extends BaseAPI {
     /**
      * 
      * @summary Create profile
+     * @param {string} projectId 
      * @param {CreateOrUpdateProfileRequest} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async createProfile(body?: CreateOrUpdateProfileRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
-        return ProfilesApiFp(this.configuration).createProfile(body, options).then((request) => request(this.axios, this.basePath));
+    public async createProfile(projectId: string, body?: CreateOrUpdateProfileRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
+        return ProfilesApiFp(this.configuration).createProfile(projectId, body, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Create profile data usage limit
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async createProfileDataUsageLimit(profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return ProfilesApiFp(this.configuration).createProfileDataUsageLimit(profileId, body, options).then((request) => request(this.axios, this.basePath));
+    public async createProfileDataUsageLimit(projectId: string, profileId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return ProfilesApiFp(this.configuration).createProfileDataUsageLimit(projectId, profileId, body, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * Deletes profile and all associated resources
      * @summary Delete profile
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async deleteProfile(profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
-        return ProfilesApiFp(this.configuration).deleteProfile(profileId, options).then((request) => request(this.axios, this.basePath));
+    public async deleteProfile(projectId: string, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
+        return ProfilesApiFp(this.configuration).deleteProfile(projectId, profileId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Delete profile data usage limit
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async deleteProfileDataUsageLimit(profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
-        return ProfilesApiFp(this.configuration).deleteProfileDataUsageLimit(profileId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async deleteProfileDataUsageLimit(projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
+        return ProfilesApiFp(this.configuration).deleteProfileDataUsageLimit(projectId, profileId, limitId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Profile details
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async getProfile(profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
-        return ProfilesApiFp(this.configuration).getProfile(profileId, options).then((request) => request(this.axios, this.basePath));
+    public async getProfile(projectId: string, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
+        return ProfilesApiFp(this.configuration).getProfile(projectId, profileId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Profile data usage limit details
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async getProfileDataUsageLimit(profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return ProfilesApiFp(this.configuration).getProfileDataUsageLimit(profileId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async getProfileDataUsageLimit(projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return ProfilesApiFp(this.configuration).getProfileDataUsageLimit(projectId, profileId, limitId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Profile data usage limits list
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async listProfileDataUsageLimits(profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<DataUsageLimit>>> {
-        return ProfilesApiFp(this.configuration).listProfileDataUsageLimits(profileId, options).then((request) => request(this.axios, this.basePath));
+    public async listProfileDataUsageLimits(projectId: string, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<DataUsageLimit>>> {
+        return ProfilesApiFp(this.configuration).listProfileDataUsageLimits(projectId, profileId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Profile stats list
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {string} [aggregate_by] 
      * @param {string} [date_after] 
@@ -1244,12 +1395,13 @@ export class ProfilesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async listProfileStats(profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<ProfileStats>>> {
-        return ProfilesApiFp(this.configuration).listProfileStats(profileId, aggregate_by, date_after, date_before, per_page, page, options).then((request) => request(this.axios, this.basePath));
+    public async listProfileStats(projectId: string, profileId: string, aggregate_by?: string, date_after?: string, date_before?: string, per_page?: number, page?: number, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<ProfileStats>>> {
+        return ProfilesApiFp(this.configuration).listProfileStats(projectId, profileId, aggregate_by, date_after, date_before, per_page, page, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Profile list
+     * @param {string} projectId 
      * @param {string} [external_key] 
      * @param {number} [per_page] 
      * @param {number} [page] 
@@ -1257,57 +1409,61 @@ export class ProfilesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async listProfiles(external_key?: string, per_page?: number, page?: number, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<Profile>>> {
-        return ProfilesApiFp(this.configuration).listProfiles(external_key, per_page, page, options).then((request) => request(this.axios, this.basePath));
+    public async listProfiles(projectId: string, external_key?: string, per_page?: number, page?: number, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<Profile>>> {
+        return ProfilesApiFp(this.configuration).listProfiles(projectId, external_key, per_page, page, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Partial update profile details
      * @param {CreateOrUpdateProfileRequest} body 
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async partialUpdateProfile(body: CreateOrUpdateProfileRequest, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
-        return ProfilesApiFp(this.configuration).partialUpdateProfile(body, profileId, options).then((request) => request(this.axios, this.basePath));
+    public async partialUpdateProfile(body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
+        return ProfilesApiFp(this.configuration).partialUpdateProfile(body, projectId, profileId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Partial update profile data usage limit
      * @param {CreateOrUpdateDataUsageLimitRequest} body 
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async partialUpdateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return ProfilesApiFp(this.configuration).partialUpdateProfileDataUsageLimit(body, profileId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async partialUpdateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return ProfilesApiFp(this.configuration).partialUpdateProfileDataUsageLimit(body, projectId, profileId, limitId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Update profile details
      * @param {CreateOrUpdateProfileRequest} body 
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async updateProfile(body: CreateOrUpdateProfileRequest, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
-        return ProfilesApiFp(this.configuration).updateProfile(body, profileId, options).then((request) => request(this.axios, this.basePath));
+    public async updateProfile(body: CreateOrUpdateProfileRequest, projectId: string, profileId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Profile>> {
+        return ProfilesApiFp(this.configuration).updateProfile(body, projectId, profileId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Update profile data usage limit
      * @param {CreateOrUpdateDataUsageLimitRequest} body 
+     * @param {string} projectId 
      * @param {string} profileId 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    public async updateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return ProfilesApiFp(this.configuration).updateProfileDataUsageLimit(body, profileId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async updateProfileDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, profileId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return ProfilesApiFp(this.configuration).updateProfileDataUsageLimit(body, projectId, profileId, limitId, options).then((request) => request(this.axios, this.basePath));
     }
 }
