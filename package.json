@@ -1,6 +1,6 @@
 {
     "name": "@forestvpn/forestvpn_cloud_api",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A package to interact ForestVPN Cloud API (manage vpn profiles, check usage statistics, and many other)",
     "author": "ForestVPN",
     "keywords": [

@@ -22,11 +22,11 @@ export interface CreateProjectRequest {
      * @type {string}
      * @memberof CreateProjectRequest
      */
-    slug?: string;
+    slug: string;
     /**
      * 
      * @type {string}
      * @memberof CreateProjectRequest
      */
-    name?: string;
+    name: string;
 }
