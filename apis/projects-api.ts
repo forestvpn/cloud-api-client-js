@@ -77,17 +77,17 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Project details
-         * @param {string} slug 
+         * @param {string} projectId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProject: async (slug: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'slug' is not null or undefined
-            if (slug === null || slug === undefined) {
-                throw new RequiredError('slug','Required parameter slug was null or undefined when calling getProject.');
+        getProject: async (projectId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling getProject.');
             }
             const localVarPath = `/projects/{projectId}/`
-                .replace(`{${"slug"}}`, encodeURIComponent(String(slug)));
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
@@ -186,18 +186,18 @@ export const ProjectsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Update project
-         * @param {string} slug 
+         * @param {string} projectId 
          * @param {UpdateProjectRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateProject: async (slug: string, body?: UpdateProjectRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'slug' is not null or undefined
-            if (slug === null || slug === undefined) {
-                throw new RequiredError('slug','Required parameter slug was null or undefined when calling updateProject.');
+        updateProject: async (projectId: string, body?: UpdateProjectRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'projectId' is not null or undefined
+            if (projectId === null || projectId === undefined) {
+                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling updateProject.');
             }
             const localVarPath = `/projects/{projectId}/`
-                .replace(`{${"slug"}}`, encodeURIComponent(String(slug)));
+                .replace(`{${"projectId"}}`, encodeURIComponent(String(projectId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
             let baseOptions;
@@ -264,12 +264,12 @@ export const ProjectsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Project details
-         * @param {string} slug 
+         * @param {string} projectId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProject(slug: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Project>>> {
-            const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).getProject(slug, options);
+        async getProject(projectId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Project>>> {
+            const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).getProject(projectId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -294,13 +294,13 @@ export const ProjectsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Update project
-         * @param {string} slug 
+         * @param {string} projectId 
          * @param {UpdateProjectRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateProject(slug: string, body?: UpdateProjectRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Project>>> {
-            const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).updateProject(slug, body, options);
+        async updateProject(projectId: string, body?: UpdateProjectRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Project>>> {
+            const localVarAxiosArgs = await ProjectsApiAxiosParamCreator(configuration).updateProject(projectId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -328,12 +328,12 @@ export const ProjectsApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Project details
-         * @param {string} slug 
+         * @param {string} projectId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProject(slug: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Project>> {
-            return ProjectsApiFp(configuration).getProject(slug, options).then((request) => request(axios, basePath));
+        async getProject(projectId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Project>> {
+            return ProjectsApiFp(configuration).getProject(projectId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -350,13 +350,13 @@ export const ProjectsApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Update project
-         * @param {string} slug 
+         * @param {string} projectId 
          * @param {UpdateProjectRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateProject(slug: string, body?: UpdateProjectRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<Project>> {
-            return ProjectsApiFp(configuration).updateProject(slug, body, options).then((request) => request(axios, basePath));
+        async updateProject(projectId: string, body?: UpdateProjectRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<Project>> {
+            return ProjectsApiFp(configuration).updateProject(projectId, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -382,13 +382,13 @@ export class ProjectsApi extends BaseAPI {
     /**
      * 
      * @summary Project details
-     * @param {string} slug 
+     * @param {string} projectId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProjectsApi
      */
-    public async getProject(slug: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Project>> {
-        return ProjectsApiFp(this.configuration).getProject(slug, options).then((request) => request(this.axios, this.basePath));
+    public async getProject(projectId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Project>> {
+        return ProjectsApiFp(this.configuration).getProject(projectId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
@@ -406,13 +406,13 @@ export class ProjectsApi extends BaseAPI {
     /**
      * 
      * @summary Update project
-     * @param {string} slug 
+     * @param {string} projectId 
      * @param {UpdateProjectRequest} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProjectsApi
      */
-    public async updateProject(slug: string, body?: UpdateProjectRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<Project>> {
-        return ProjectsApiFp(this.configuration).updateProject(slug, body, options).then((request) => request(this.axios, this.basePath));
+    public async updateProject(projectId: string, body?: UpdateProjectRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<Project>> {
+        return ProjectsApiFp(this.configuration).updateProject(projectId, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
