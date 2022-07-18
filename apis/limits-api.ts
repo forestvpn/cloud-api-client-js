@@ -27,15 +27,15 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Create data usage limit
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createDataUsageLimit: async (projectId: string, body?: CreateOrUpdateDataUsageLimitRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling createDataUsageLimit.');
+        createDataUsageLimit: async (X_Project_Id: string, body?: CreateOrUpdateDataUsageLimitRequest, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'X_Project_Id' is not null or undefined
+            if (X_Project_Id === null || X_Project_Id === undefined) {
+                throw new RequiredError('X_Project_Id','Required parameter X_Project_Id was null or undefined when calling createDataUsageLimit.');
             }
             const localVarPath = `/limits/data-usage/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -58,8 +58,8 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
 
             // authentication BearerTokenAuth required
 
-            if (projectId !== undefined && projectId !== null) {
-                localVarHeaderParameter['projectId'] = String(projectId);
+            if (X_Project_Id !== undefined && X_Project_Id !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(X_Project_Id);
             }
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -85,15 +85,15 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Delete data usage limit
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteDataUsageLimit: async (projectId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling deleteDataUsageLimit.');
+        deleteDataUsageLimit: async (X_Project_Id: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'X_Project_Id' is not null or undefined
+            if (X_Project_Id === null || X_Project_Id === undefined) {
+                throw new RequiredError('X_Project_Id','Required parameter X_Project_Id was null or undefined when calling deleteDataUsageLimit.');
             }
             // verify required parameter 'limitId' is not null or undefined
             if (limitId === null || limitId === undefined) {
@@ -121,8 +121,8 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
 
             // authentication BearerTokenAuth required
 
-            if (projectId !== undefined && projectId !== null) {
-                localVarHeaderParameter['projectId'] = String(projectId);
+            if (X_Project_Id !== undefined && X_Project_Id !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(X_Project_Id);
             }
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -144,15 +144,15 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Data usage limit details
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDataUsageLimit: async (projectId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling getDataUsageLimit.');
+        getDataUsageLimit: async (X_Project_Id: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'X_Project_Id' is not null or undefined
+            if (X_Project_Id === null || X_Project_Id === undefined) {
+                throw new RequiredError('X_Project_Id','Required parameter X_Project_Id was null or undefined when calling getDataUsageLimit.');
             }
             // verify required parameter 'limitId' is not null or undefined
             if (limitId === null || limitId === undefined) {
@@ -180,8 +180,8 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
 
             // authentication BearerTokenAuth required
 
-            if (projectId !== undefined && projectId !== null) {
-                localVarHeaderParameter['projectId'] = String(projectId);
+            if (X_Project_Id !== undefined && X_Project_Id !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(X_Project_Id);
             }
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -203,14 +203,14 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Data usage limit list
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listDataUsageLimits: async (projectId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling listDataUsageLimits.');
+        listDataUsageLimits: async (X_Project_Id: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'X_Project_Id' is not null or undefined
+            if (X_Project_Id === null || X_Project_Id === undefined) {
+                throw new RequiredError('X_Project_Id','Required parameter X_Project_Id was null or undefined when calling listDataUsageLimits.');
             }
             const localVarPath = `/limits/data-usage/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -233,8 +233,8 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
 
             // authentication BearerTokenAuth required
 
-            if (projectId !== undefined && projectId !== null) {
-                localVarHeaderParameter['projectId'] = String(projectId);
+            if (X_Project_Id !== undefined && X_Project_Id !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(X_Project_Id);
             }
 
             const query = new URLSearchParams(localVarUrlObj.search);
@@ -257,19 +257,19 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Partial update profile details
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        partialUpdateDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        partialUpdateDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling partialUpdateDataUsageLimit.');
             }
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling partialUpdateDataUsageLimit.');
+            // verify required parameter 'X_Project_Id' is not null or undefined
+            if (X_Project_Id === null || X_Project_Id === undefined) {
+                throw new RequiredError('X_Project_Id','Required parameter X_Project_Id was null or undefined when calling partialUpdateDataUsageLimit.');
             }
             // verify required parameter 'limitId' is not null or undefined
             if (limitId === null || limitId === undefined) {
@@ -297,8 +297,8 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
 
             // authentication BearerTokenAuth required
 
-            if (projectId !== undefined && projectId !== null) {
-                localVarHeaderParameter['projectId'] = String(projectId);
+            if (X_Project_Id !== undefined && X_Project_Id !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(X_Project_Id);
             }
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -325,19 +325,19 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @summary Update data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        updateDataUsageLimit: async (body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body','Required parameter body was null or undefined when calling updateDataUsageLimit.');
             }
-            // verify required parameter 'projectId' is not null or undefined
-            if (projectId === null || projectId === undefined) {
-                throw new RequiredError('projectId','Required parameter projectId was null or undefined when calling updateDataUsageLimit.');
+            // verify required parameter 'X_Project_Id' is not null or undefined
+            if (X_Project_Id === null || X_Project_Id === undefined) {
+                throw new RequiredError('X_Project_Id','Required parameter X_Project_Id was null or undefined when calling updateDataUsageLimit.');
             }
             // verify required parameter 'limitId' is not null or undefined
             if (limitId === null || limitId === undefined) {
@@ -365,8 +365,8 @@ export const LimitsApiAxiosParamCreator = function (configuration?: Configuratio
 
             // authentication BearerTokenAuth required
 
-            if (projectId !== undefined && projectId !== null) {
-                localVarHeaderParameter['projectId'] = String(projectId);
+            if (X_Project_Id !== undefined && X_Project_Id !== null) {
+                localVarHeaderParameter['X-Project-Id'] = String(X_Project_Id);
             }
 
             localVarHeaderParameter['Content-Type'] = 'application/json';
@@ -401,13 +401,13 @@ export const LimitsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create data usage limit
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createDataUsageLimit(projectId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).createDataUsageLimit(projectId, body, options);
+        async createDataUsageLimit(X_Project_Id: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).createDataUsageLimit(X_Project_Id, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -416,13 +416,13 @@ export const LimitsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Delete data usage limit
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteDataUsageLimit(projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
-            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).deleteDataUsageLimit(projectId, limitId, options);
+        async deleteDataUsageLimit(X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<void>>> {
+            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).deleteDataUsageLimit(X_Project_Id, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -431,13 +431,13 @@ export const LimitsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Data usage limit details
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDataUsageLimit(projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).getDataUsageLimit(projectId, limitId, options);
+        async getDataUsageLimit(X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).getDataUsageLimit(X_Project_Id, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -446,12 +446,12 @@ export const LimitsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Data usage limit list
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listDataUsageLimits(projectId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<DataUsageLimit>>>> {
-            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).listDataUsageLimits(projectId, options);
+        async listDataUsageLimits(X_Project_Id: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<Array<DataUsageLimit>>>> {
+            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).listDataUsageLimits(X_Project_Id, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -461,13 +461,13 @@ export const LimitsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Partial update profile details
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partialUpdateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).partialUpdateDataUsageLimit(body, projectId, limitId, options);
+        async partialUpdateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).partialUpdateDataUsageLimit(body, X_Project_Id, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -477,13 +477,13 @@ export const LimitsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Update data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
-            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).updateDataUsageLimit(body, projectId, limitId, options);
+        async updateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => Promise<AxiosResponse<DataUsageLimit>>> {
+            const localVarAxiosArgs = await LimitsApiAxiosParamCreator(configuration).updateDataUsageLimit(body, X_Project_Id, limitId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs :AxiosRequestConfig = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -501,69 +501,69 @@ export const LimitsApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Create data usage limit
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createDataUsageLimit(projectId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return LimitsApiFp(configuration).createDataUsageLimit(projectId, body, options).then((request) => request(axios, basePath));
+        async createDataUsageLimit(X_Project_Id: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return LimitsApiFp(configuration).createDataUsageLimit(X_Project_Id, body, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Delete data usage limit
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteDataUsageLimit(projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
-            return LimitsApiFp(configuration).deleteDataUsageLimit(projectId, limitId, options).then((request) => request(axios, basePath));
+        async deleteDataUsageLimit(X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<void>> {
+            return LimitsApiFp(configuration).deleteDataUsageLimit(X_Project_Id, limitId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Data usage limit details
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDataUsageLimit(projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return LimitsApiFp(configuration).getDataUsageLimit(projectId, limitId, options).then((request) => request(axios, basePath));
+        async getDataUsageLimit(X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return LimitsApiFp(configuration).getDataUsageLimit(X_Project_Id, limitId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Data usage limit list
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listDataUsageLimits(projectId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<DataUsageLimit>>> {
-            return LimitsApiFp(configuration).listDataUsageLimits(projectId, options).then((request) => request(axios, basePath));
+        async listDataUsageLimits(X_Project_Id: string, options?: AxiosRequestConfig): Promise<AxiosResponse<Array<DataUsageLimit>>> {
+            return LimitsApiFp(configuration).listDataUsageLimits(X_Project_Id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Partial update profile details
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async partialUpdateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return LimitsApiFp(configuration).partialUpdateDataUsageLimit(body, projectId, limitId, options).then((request) => request(axios, basePath));
+        async partialUpdateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return LimitsApiFp(configuration).partialUpdateDataUsageLimit(body, X_Project_Id, limitId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update data usage limit
          * @param {CreateOrUpdateDataUsageLimitRequest} body 
-         * @param {string} projectId 
+         * @param {string} X_Project_Id 
          * @param {string} limitId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
-            return LimitsApiFp(configuration).updateDataUsageLimit(body, projectId, limitId, options).then((request) => request(axios, basePath));
+        async updateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options?: AxiosRequestConfig): Promise<AxiosResponse<DataUsageLimit>> {
+            return LimitsApiFp(configuration).updateDataUsageLimit(body, X_Project_Id, limitId, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -578,74 +578,74 @@ export class LimitsApi extends BaseAPI {
     /**
      * 
      * @summary Create data usage limit
-     * @param {string} projectId 
+     * @param {string} X_Project_Id 
      * @param {CreateOrUpdateDataUsageLimitRequest} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LimitsApi
      */
-    public async createDataUsageLimit(projectId: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return LimitsApiFp(this.configuration).createDataUsageLimit(projectId, body, options).then((request) => request(this.axios, this.basePath));
+    public async createDataUsageLimit(X_Project_Id: string, body?: CreateOrUpdateDataUsageLimitRequest, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return LimitsApiFp(this.configuration).createDataUsageLimit(X_Project_Id, body, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Delete data usage limit
-     * @param {string} projectId 
+     * @param {string} X_Project_Id 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LimitsApi
      */
-    public async deleteDataUsageLimit(projectId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
-        return LimitsApiFp(this.configuration).deleteDataUsageLimit(projectId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async deleteDataUsageLimit(X_Project_Id: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<void>> {
+        return LimitsApiFp(this.configuration).deleteDataUsageLimit(X_Project_Id, limitId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Data usage limit details
-     * @param {string} projectId 
+     * @param {string} X_Project_Id 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LimitsApi
      */
-    public async getDataUsageLimit(projectId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return LimitsApiFp(this.configuration).getDataUsageLimit(projectId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async getDataUsageLimit(X_Project_Id: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return LimitsApiFp(this.configuration).getDataUsageLimit(X_Project_Id, limitId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Data usage limit list
-     * @param {string} projectId 
+     * @param {string} X_Project_Id 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LimitsApi
      */
-    public async listDataUsageLimits(projectId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<DataUsageLimit>>> {
-        return LimitsApiFp(this.configuration).listDataUsageLimits(projectId, options).then((request) => request(this.axios, this.basePath));
+    public async listDataUsageLimits(X_Project_Id: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<Array<DataUsageLimit>>> {
+        return LimitsApiFp(this.configuration).listDataUsageLimits(X_Project_Id, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Partial update profile details
      * @param {CreateOrUpdateDataUsageLimitRequest} body 
-     * @param {string} projectId 
+     * @param {string} X_Project_Id 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LimitsApi
      */
-    public async partialUpdateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return LimitsApiFp(this.configuration).partialUpdateDataUsageLimit(body, projectId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async partialUpdateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return LimitsApiFp(this.configuration).partialUpdateDataUsageLimit(body, X_Project_Id, limitId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * 
      * @summary Update data usage limit
      * @param {CreateOrUpdateDataUsageLimitRequest} body 
-     * @param {string} projectId 
+     * @param {string} X_Project_Id 
      * @param {string} limitId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof LimitsApi
      */
-    public async updateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, projectId: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
-        return LimitsApiFp(this.configuration).updateDataUsageLimit(body, projectId, limitId, options).then((request) => request(this.axios, this.basePath));
+    public async updateDataUsageLimit(body: CreateOrUpdateDataUsageLimitRequest, X_Project_Id: string, limitId: string, options?: AxiosRequestConfig) : Promise<AxiosResponse<DataUsageLimit>> {
+        return LimitsApiFp(this.configuration).updateDataUsageLimit(body, X_Project_Id, limitId, options).then((request) => request(this.axios, this.basePath));
     }
 }
