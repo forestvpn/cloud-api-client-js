@@ -1,7 +1,7 @@
+export * from './account';
 export * from './action';
 export * from './activity';
 export * from './address';
-export * from './billing-account';
 export * from './country';
 export * from './create-billing-request';
 export * from './create-or-update-data-usage-limit-request';
@@ -11,7 +11,6 @@ export * from './create-project-request';
 export * from './data-usage-limit';
 export * from './location';
 export * from './model-error';
-export * from './payment-method';
 export * from './payment-profile';
 export * from './profile';
 export * from './profile-stats';

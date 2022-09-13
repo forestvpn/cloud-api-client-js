@@ -40,7 +40,7 @@ export interface Country {
      * @type {string}
      * @memberof Country
      */
-    currency: string;
+    currency_code: string;
     /**
      * 
      * @type {Array<string>}

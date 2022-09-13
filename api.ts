@@ -12,7 +12,6 @@
  * Do not edit the class manually.
  */export * from './apis/billing-api';
 export * from './apis/geo-api';
-export * from './apis/limits-api';
 export * from './apis/profiles-api';
 export * from './apis/projects-api';
 
