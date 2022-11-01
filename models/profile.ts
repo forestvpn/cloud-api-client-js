@@ -11,6 +11,7 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ProfileStatus } from './profile-status';
 /**
  * 
  * @export
@@ -31,10 +32,10 @@ export interface Profile {
     external_key: string;
     /**
      * 
-     * @type {string}
+     * @type {ProfileStatus}
      * @memberof Profile
      */
-    status: ProfileStatusEnum;
+    status: ProfileStatus;
     /**
      * A secret key that should be used along with ID in ForestVPN Cloud VPN SDK.
      * @type {string}
@@ -48,13 +49,3 @@ export interface Profile {
      */
     metadata: { [key: string]: string; };
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ProfileStatusEnum {
-    Active = 'active',
-    Suspended = 'suspended'
-}
-

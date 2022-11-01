@@ -11,6 +11,7 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
+import { ProfileStatus } from './profile-status';
 /**
  * 
  * @export
@@ -31,18 +32,8 @@ export interface CreateOrUpdateProfileRequest {
     metadata?: { [key: string]: string; };
     /**
      * 
-     * @type {string}
+     * @type {ProfileStatus}
      * @memberof CreateOrUpdateProfileRequest
      */
-    status?: CreateOrUpdateProfileRequestStatusEnum;
+    status?: ProfileStatus;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum CreateOrUpdateProfileRequestStatusEnum {
-    Active = 'active',
-    Suspended = 'suspended'
-}
-
